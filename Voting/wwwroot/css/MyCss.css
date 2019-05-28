@@ -1,0 +1,42 @@
+﻿.linkHover {
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+    display: inline;
+}
+
+    /* On mouse-over */
+    .linkHover:hover {
+        background: #eee;
+    }
+.botTopMargin {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    background-color: white;
+}
+.allSolid {
+    border: 2px solid #f5f5f5;
+}
+.bottomSolid{
+    border-bottom:2px solid #f5f5f5;
+
+}
+.topSolid {
+    border-top: 2px solid #f5f5f5;
+}
+.rightSolid {
+    border-right: 2px solid #f5f5f5;
+}
+
+.forLogOut {
+    color: #f3f5f7;
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+}

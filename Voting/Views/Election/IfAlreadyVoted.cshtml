@@ -1,0 +1,42 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<applicationUser> SignInManager
+@inject UserManager<applicationUser> UserManager
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<section class="mbr-section content6 cid-rgxGSSsXyG" id="content6-0" style="background-color:white;">
+    <h3>Sorry ,you have already voted for  @ViewBag.Party.Name for this election ,you cant vote more than once.</h3>
+    <div style="padding-left: 20px;padding-top: 20px;">
+        <hr />
+        <br />
+        <div class="page-header bottomSolid">
+            <h4 style="text-align:center">
+                Election Name:  @ViewBag.Election.Name
+            </h4>
+            <div class="col-md-7" >
+                <h5 style="text-align:center">You voted on @ViewBag.Vote.dateTime </h5>
+            </div>
+        </div>
+
+        <div class="row product">
+            <div class="col-md-5 col-md-offset-0">
+                <img class="img-responsive" src="@Url.Content( ViewBag.Party.Path)" style="display: block;border-right: 3px solid #f5f5f5; max-width: 100%; height: auto;">
+            </div>
+            <div class="col-md-7">
+                <h2>@ViewBag.Party.Name</h2>
+                <p>
+                    @ViewBag.Party.Description
+                </p>
+                <div>
+                    @ViewBag.Party.Description
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</section>

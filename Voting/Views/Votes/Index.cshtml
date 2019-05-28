@@ -1,0 +1,31 @@
+﻿@model Voting.Models.Vote
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<applicationUser> SignInManager
+@inject UserManager<applicationUser> UserManager
+
+@{
+    ViewData["Title"] = "Index";
+}
+<br />
+<br />
+<h3>Are you sure you want to Vote For @ViewBag.Party.Name ?</h3>
+<br />
+<br />
+<br />
+<div>
+    <h4>Not:Once you have voted you can't edit your vote.</h4>
+    <br />
+    <br />
+    <br />
+    <hr />
+    <form asp-action="Create" class="mbr-form" asp-controller="Votes" asp-route-returnUrl="~/Views/Parties/Details/@ViewBag.Party.PartyId">
+        <input type="text" hidden asp-for="PartyId" value="@ViewBag.Party.PartyId" />
+        <input type="text" hidden asp-for="dateTime" value="@DateTime.Now" />
+        <input type="text" hidden asp-for="UserName" value="@UserManager.GetUserName(User)" />
+        <span class="input-group-btn">
+            <button type="submit" value="Enter Candidate" class="btn btn-primary btn-form display-4  write-review">
+                Confirm Vote
+            </button>
+        </span>
+    </form>
+</div>

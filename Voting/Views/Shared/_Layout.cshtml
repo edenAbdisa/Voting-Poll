@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html ng-app="plunker">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v4.8.10, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>@ViewData["Title"] - Voting</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/" />
+        <link rel="stylesheet" href="~/less.css">
+        <link rel="stylesheet" href="~/assets/web/assets/mobirise-icons/mobirise-icons.css">
+        <link rel="stylesheet" href="~/assets/tether/tether.min.css">
+        <link rel="stylesheet" href="~/assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="~/assets/bootstrap/css/bootstrap-grid.min.css">
+        <link rel="stylesheet" href="~/assets/bootstrap/css/bootstrap-reboot.min.css">
+        <link rel="stylesheet" href="~/assets/dropdown/css/style.css">
+        <link rel="stylesheet" href="~/assets/socicon/css/styles.css">
+        <link rel="stylesheet" href="~/assets/theme/css/style.css">
+        <link rel="stylesheet" href="~/assets/gallery/style.css">
+        <link rel="stylesheet" href="~/assets/mobirise/css/mbr-additional.css" type="text/css">
+        <link rel="stylesheet" href="~/css/MyCss.css">
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.css">
+        <script>document.write("<base href=\"" + document.location + "\" />");</script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.min.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+</head>
+<body style="overflow-x:hidden;" ng-controller="MainCtrl">
+
+    @RenderSection("Scripts", required: false)
+    <section class="menu cid-qTkzRZLJNu" once="menu" id="menu1-0" style="margin-bottom:7%;">
+        <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="menu-logo">
+                <div class="navbar-brand">
+                    <span class="navbar-logo">
+                        <a asp-area="" asp-controller="Home" asp-action="Index">
+                            <img src="~/assets/images/logo2.jpg" alt="Ethiopia Vote" style="height: 3.8rem;">
+                        </a>
+                    </span>
+                    <span class="navbar-caption-wrap">
+                        <a class="navbar-caption text-white display-4" asp-area="" asp-controller="Home" asp-action="Index">
+                            Ethiopia's Vote
+                        </a>
+                    </span>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+
+                    <li class="nav-item">
+                        <a class="nav-link link text-white display-4" asp-area="" asp-controller="Home" asp-action="About">
+
+                            About Us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link text-white display-4" asp-area="" asp-controller="Home" asp-action="Services">
+
+                            Services
+                        </a>
+                    </li>
+                </ul>
+                <partial name="_LoginPartial" />
+
+            </div>
+        </nav>
+    </section>
+    <partial name="_CookieConsentPartial" />
+
+    @RenderBody()
+    <section once="" class="cid-rcTVgjxylF" id="footer7-v" style="margin-top:10%;bottom:0;" >
+        <div class="container">
+            <div class="media-container-row align-center mbr-white">
+                <div class="row row-links">
+                    <ul class="foot-menu">
+                        <li class="foot-menu-item mbr-fonts-style display-7">
+                            <a class="text-white mbr-bold" asp-area="" asp-controller="Home" asp-action="About">About us</a>
+                        </li>
+                        <li class="foot-menu-item mbr-fonts-style display-7">
+                            <a class="text-white mbr-bold" asp-area="" asp-controller="Home" asp-action="Services">Services</a>
+                        </li>
+                        <li class="foot-menu-item mbr-fonts-style display-7">
+                            <a class="text-white mbr-bold" asp-area="" asp-controller="Home" asp-action="Contact">Get In Touch</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row social-row">
+                    <div class="social-list align-right pb-2">
+                        <div class="soc-item">
+                            <a href="https://twitter.com/" target="_blank">
+                                <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div><div class="soc-item">
+                            <a href="https://www.facebook.com/pages/" target="_blank">
+                                <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div><div class="soc-item">
+                            <a href="https://www.youtube.com/" target="_blank">
+                                <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div><div class="soc-item">
+                            <a href="https://instagram.com/" target="_blank">
+                                <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div><div class="soc-item">
+                            <a href="https://plus.google.com/" target="_blank">
+                                <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div><div class="soc-item">
+                            <a href="https://www.behance.net/" target="_blank">
+                                <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-copirayt">
+                    <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
+                        © Copyright 2017 Ethiopia Vote - All Rights Reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/js/app.js" asp-append-version="true"></script>
+        <script src="~/assets/web/assets/jquery/jquery.min.js"></script>
+        <script src="~/assets/popper/popper.min.js"></script>
+        <script src="~/assets/tether/tether.min.js"></script>
+        <script src="~/assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="~/assets/smoothscroll/smooth-scroll.js"></script>
+        <script src="~/assets/dropdown/js/script.min.js"></script>
+        <script src="~/assets/touchswipe/jquery.touch-swipe.min.js"></script>
+        <script src="~/assets/masonry/masonry.pkgd.min.js"></script>
+        <script src="~/assets/imagesloaded/imagesloaded.pkgd.min.js"></script>
+        <script src="~/assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js"></script>
+        <script src="~/assets/vimeoplayer/jquery.mb.vimeo_player.js"></script>
+        <script src="~/assets/parallax/jarallax.min.js"></script>
+        <script src="~/assets/theme/js/script.js"></script>
+        <script src="~/assets/gallery/player.min.js"></script>
+        <script src="~/assets/gallery/script.js"></script>
+        <script src="~/assets/slidervideo/script.js"></script>
+        <script src="~/assets/touchswipe/jquery.touch-swipe.min.js"></script>
+        <script src="~/css/material.js"></script>
+        <script src="~/css/material.min.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+</body>
+
+</html>

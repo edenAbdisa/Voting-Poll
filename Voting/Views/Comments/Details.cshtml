@@ -1,0 +1,42 @@
+﻿@model Voting.Models.Comment
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Comment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PartyId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PartyId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CommentData)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CommentData)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dateTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.dateTime)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.commentId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

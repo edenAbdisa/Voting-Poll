@@ -1,0 +1,42 @@
+﻿@model Voting.Models.Comment
+
+
+
+<h2 style="text-align:center;">Edit Comment</h2>
+
+<hr />
+<div class="row" style=" padding-left: 30%; padding-right: 30%;align-content:center;">
+    <form asp-action="Edit" style="width: 100%;" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="commentId" />
+        <div class="form-group">
+            <label asp-for="PartyId" class="control-label" hidden></label>
+            <input asp-for="PartyId" class="form-control" hidden />
+            <span asp-validation-for="PartyId" class="text-danger" hidden></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="UserName" class="control-label" hidden></label>
+            <input asp-for="UserName" class="form-control" hidden />
+            <span asp-validation-for="UserName" class="text-danger" hidden></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CommentData" class="control-label"></label>
+            <input asp-for="CommentData" class="form-control" />
+            <span asp-validation-for="CommentData" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="dateTime" class="control-label" hidden></label>
+            <input asp-for="dateTime" class="form-control" hidden />
+            <span asp-validation-for="dateTime" class="text-danger" hidden></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save Edit" class="btn btn-default" />
+        </div>
+    </form>
+</div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

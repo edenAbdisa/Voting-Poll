@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Voting.Models.Party>
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<applicationUser> SignInManager
+@inject UserManager<applicationUser> UserManager
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="row" style=" padding-left: 10%; padding-right: 30%;align-content:center;">
+    <table class="table" style="width: 100%;">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+
+                <tr>
+                    <td>
+
+                        <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text">
+                                    Party Name : @Html.DisplayFor(modelItem => item.Name)
+                                </h2>
+                            </div>
+
+                            <div class="mdl-card__supporting-text">
+                                <img src="@Url.Content(item.Path)" alt="" title="" style="width: 256px; height: 256px;margin-bottom:20px;">
+                                @if (!User.IsInRole("Voter"))
+                                {
+                                    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+                                        for="demo-menu-lower-left">
+                                        <li class="mdl-menu__item" style="height: 40px; margin: 7px;">
+                                            <a class="nav-link link text-black display-4 linkHover"  asp-action="Edit" asp-route-id="@item.PartyId">
+                                                 Edit
+                                            </a>
+                                        </li>
+                                        <li class="mdl-menu__item mdl-menu__item--full-bleed-divider" style="height: 40px; margin: 7px;">
+                                            <a class="nav-link link text-black display-4 linkHover"  asp-action="Details" asp-route-id="@item.PartyId">
+                                                Detail
+                                            </a>
+                                        </li>
+                                        <li disabled class="mdl-menu__item" style="height: 40px; margin: 7px;" >
+                                            <a class="nav-link link text-black display-4 linkHover" asp-action="Delete" asp-route-id="@item.PartyId">
+                                                Delete
+                                            </a>
+                                        </li>
+                                    </ul>
+                                }
+                                else
+                                {
+                                    <a asp-action="Details" asp-route-id="@item.PartyId" asp-controller="Parties" class="nav-link link text-black display-4 linkHover">
+                                        View Details information of @Html.DisplayFor(modelItem => item.Name)
+                                    </a>
+                                }
+                            </div>
+
+                        </div>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

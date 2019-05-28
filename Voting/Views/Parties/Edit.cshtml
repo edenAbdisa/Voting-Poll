@@ -1,0 +1,65 @@
+﻿@model Voting.Models.Party
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<h4 style="text-align:center;">Edit Party</h4>
+<hr />
+<div class="row" style=" padding-left: 30%; padding-right: 30%;align-content:center;">
+     
+        <form asp-action="Edit" enctype="multipart/form-data" style="width: 100%;">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PartyId" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="form-control-label mbr-fonts-style display-7"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Type" class="form-control-label mbr-fonts-style display-7"></label>
+                <select asp-for="Type" class="form-control">
+                    <option value="Party">Party</option>
+                    <option value="Single">Single</option>
+                    <option value="Conservative">Conservative</option>
+                    <option value="Democratic">Democratic</option>
+                </select>
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Type" class="form-control-label mbr-fonts-style display-7"></label>
+                <select asp-for="ElectionId" class="form-control">
+                    @foreach (var election in @ViewBag.Elections)
+                    {
+                        <option value="@election.ElectionId">@election.Name</option>
+                    }
+                </select>
+                <span asp-validation-for="ElectionId" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageFile" class="form-control-label mbr-fonts-style display-7"></label>
+                <input type="file" asp-for="ImageFile" class="form-control" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label form-control-label mbr-fonts-style display-7"></label>
+                <input type="text" asp-for="Description" class="form-control" rows="7" data-form-field="Message" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default" style="margin-left:30%;margin-right:30%;width:40%;">Add Party</button>
+            </div>
+        </form>
+     
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

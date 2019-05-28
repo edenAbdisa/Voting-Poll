@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Voting.Models.Vote>
+
+@{
+    ViewData["Title"] = "GetMyVotes";
+}
+
+<div class="row" style=" padding-left: 30%; padding-right: 30%;align-content:center;">
+    <table class="table" style="overflow-x:auto;overflow-y:auto;">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PartyId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.dateTime)
+                </th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PartyId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dateTime)
+                    </td>
+                </tr>}
+        </tbody>
+    </table>
+</div>
